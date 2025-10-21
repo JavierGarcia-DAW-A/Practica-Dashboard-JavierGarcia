@@ -2,4 +2,4 @@
 
 Imagen de prueba
 
-!["public/assets/img/image.png"](/public/assets/img/image.png)
+!["public/assets/img/image.png"](public/assets/img/image.png)
