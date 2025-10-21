@@ -1,5 +1,5 @@
-# PRACTICA DASHBOARD JAVIER GARCÍA SANTIAGO
+# PRACTICA DASHBOARD JAVIER GARCIA SANTIAGO
 
-RESULTADO DESDE MI PORTÁTIL
+Imagen de prueba
 
-![Resultado](/public/assets/img/image.png)
+!["public/assets/img/image.png"](/public/assets/img/image.png)
