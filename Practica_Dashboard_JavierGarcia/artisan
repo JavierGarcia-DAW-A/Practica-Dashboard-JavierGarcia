@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+// Lightweight artisan stub: supports 'serve' to start PHP built-in server.
+// This is NOT the real Laravel artisan. It's a helper to run the contained public/ folder.
+$argv0 = isset($argv[0]) ? $argv[0] : 'artisan';
+$cmd = isset($argv[1]) ? $argv[1] : null;
+
+if ($cmd === 'serve') {
+    $host = '127.0.0.1';
+    $port = '8000';
+    // allow custom host:port -> php artisan serve --host=0.0.0.0 --port=8080
+    foreach ($argv as $a) {
+        if (strpos($a, '--host=') === 0) {
+            $host = substr($a, 7);
+        } elseif (strpos($a, '--port=') === 0) {
+            $port = substr($a, 7);
+        }
+    }
+    $docroot = __DIR__ . '/public';
+    $cmdline = sprintf('php -S %s:%s -t %s', $host, $port, escapeshellarg($docroot));
+    echo "Starting development server at http://{$host}:{$port}\n";
+    echo "Document root: {$docroot}\n";
+    echo "Press Ctrl-C to stop the server\n\n";
+    passthru($cmdline);
+    exit(0);
+}
+
+echo "Lightweight artisan stub. Supported commands:\n";
+echo "  serve        Start the PHP built-in server on public/ (like 'php artisan serve')\n";
+echo "Examples:\n";
+echo "  php artisan serve\n";
+echo "  php artisan serve --host=0.0.0.0 --port=8080\n";
